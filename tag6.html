@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indovinello #6 ☕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 40px;
+            max-width: 700px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 3px solid rgba(255, 154, 158, 0.3);
+        }
+
+        .number {
+            font-size: 4em;
+            color: #ff6b6b;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #ff6b6b;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 4em;
+            animation: steam 2s infinite;
+            margin: 20px 0;
+        }
+
+        @keyframes steam {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-20px) scale(1.3); opacity: 0; }
+        }
+
+        .riddle {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid #ff6b6b;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .riddle p {
+            color: #333;
+            font-size: 1.3em;
+            line-height: 1.9;
+            font-style: italic;
+            text-align: left;
+        }
+
+        .hint {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 2px dashed #ff6b6b;
+            display: none;
+        }
+
+        .hint.visible {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hint strong {
+            color: #ff6b6b;
+            font-size: 1.1em;
+        }
+
+        .hint-button {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff9a9e 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hint-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .hint-button:active {
+            transform: translateY(-1px);
+        }
+
+        .hint-button.hidden {
+            display: none;
+        }
+
+        .decorative {
+            margin: 20px 0;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="number">6</div>
+        <h1>☕ Il Fuoco Cremisi ☕</h1>
+        <div class="icon">🔴</div>
+        
+        <div class="riddle">
+            <p>
+                Hai mai notato come un profumo ti svegli con un bacio e un pizzico di calore? Cerca la sorgente del risveglio, ma attenzione al colore del "fuoco" nel giardino delle cialde. Lì, dove una singola gemma cremisi urla la sua anomalia tra le sorelle, riposa la prossima follia.
+            </p>
+        </div>
+
+        <button class="hint-button" onclick="showHint()">💡 Ti arrendi? Clicca per un aiuto!</button>
+
+        <div class="hint" id="hint">
+            <strong>🔍 Dove cercare?</strong><br>
+            Cerca la capsula rossa che si distingue dalle altre... ☕❤️
+        </div>
+
+        <div class="decorative">☕ 💎 ☕</div>
+        
+        <p style="margin-top: 30px; color: #666; font-size: 1.1em;">
+            Il risveglio più dolce ti aspetta! Continua! 🎁
+        </p>
+    </div>
+
+    <script>
+        function showHint() {
+            document.getElementById('hint').classList.add('visible');
+            document.querySelector('.hint-button').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indovinello #5 😄</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 40px;
+            max-width: 700px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 3px solid rgba(168, 237, 234, 0.5);
+        }
+
+        .number {
+            font-size: 4em;
+            color: #5ec5c1;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #5ec5c1;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 4em;
+            animation: expand 2s infinite;
+            margin: 20px 0;
+        }
+
+        @keyframes expand {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .riddle {
+            background: linear-gradient(135deg, #f0ffff 0%, #e6f9f9 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid #5ec5c1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .riddle p {
+            color: #333;
+            font-size: 1.3em;
+            line-height: 1.9;
+            font-style: italic;
+            text-align: left;
+        }
+
+        .hint {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 2px dashed #5ec5c1;
+            display: none;
+        }
+
+        .hint.visible {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hint strong {
+            color: #5ec5c1;
+            font-size: 1.1em;
+        }
+
+        .hint-button {
+            background: linear-gradient(135deg, #5ec5c1 0%, #a8edea 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(94, 197, 193, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hint-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(94, 197, 193, 0.4);
+        }
+
+        .hint-button:active {
+            transform: translateY(-1px);
+        }
+
+        .hint-button.hidden {
+            display: none;
+        }
+
+        .decorative {
+            margin: 20px 0;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="number">5</div>
+        <h1>😄 L'Espansione Inevitabile 😄</h1>
+        <div class="icon">💪</div>
+        
+        <div class="riddle">
+            <p>
+                Tu mi svuoti le tasche, pensando siano gli oggetti a causare il danno. Ah, stoltezza! Il vero colpevole è qualcosa di ben più grosso che si nutre del nostro amore, un desiderio così espansivo da rompere ogni tessuto! Cerca sulla piccola mensola eletta dove depositi i miei pesi, e capirai quale magnifica verità intima squarcia i miei pantaloni.
+            </p>
+        </div>
+
+        <button class="hint-button" onclick="showHint()">💡 Ti arrendi? Clicca per un aiuto!</button>
+
+        <div class="hint" id="hint">
+            <strong>🔍 Dove cercare?</strong><br>
+            Sulla mensola dove svuoti le tasche... la colpa non è degli oggetti! 😏
+        </div>
+
+        <div class="decorative">💕 😆 💕</div>
+        
+        <p style="margin-top: 30px; color: #666; font-size: 1.1em;">
+            Ah, l'amore fa crescere tutto! Continua la ricerca! 🎁
+        </p>
+    </div>
+
+    <script>
+        function showHint() {
+            document.getElementById('hint').classList.add('visible');
+            document.querySelector('.hint-button').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

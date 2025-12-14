@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indovinello #9 🚗</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 40px;
+            max-width: 700px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 3px solid rgba(79, 172, 254, 0.5);
+        }
+
+        .number {
+            font-size: 4em;
+            color: #4facfe;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #4facfe;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 4em;
+            animation: drive 2s infinite;
+            margin: 20px 0;
+        }
+
+        @keyframes drive {
+            0%, 100% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+        }
+
+        .riddle {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid #4facfe;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .riddle p {
+            color: #333;
+            font-size: 1.3em;
+            line-height: 1.9;
+            font-style: italic;
+            text-align: left;
+        }
+
+        .hint {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 2px dashed #4facfe;
+            display: none;
+        }
+
+        .hint.visible {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hint strong {
+            color: #4facfe;
+            font-size: 1.1em;
+        }
+
+        .hint-button {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hint-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .hint-button:active {
+            transform: translateY(-1px);
+        }
+
+        .hint-button.hidden {
+            display: none;
+        }
+
+        .decorative {
+            margin: 20px 0;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="number">9</div>
+        <h1>🚗 Il Nido d'Amore Blu 🚗</h1>
+        <div class="icon">💙</div>
+        
+        <div class="riddle">
+            <p>
+                Dopo il grande Labirinto di verde, fuori dal mondo e dentro il nostro, la tua Yaris Blu divenne il nido, il dolce segreto. Un rifugio che abbiamo reso più caldo della mia cara compagna perduta, la Tesla. Cerca l'indizio proprio nell'ala che scherma i raggi, nell'ombra che protegge il nostro nido d'amore su quattro ruote.
+            </p>
+        </div>
+
+        <button class="hint-button" onclick="showHint()">💡 Ti arrendi? Clicca per un aiuto!</button>
+
+        <div class="hint" id="hint">
+            <strong>🔍 Dove cercare?</strong><br>
+            Nell'aletta parasole della Yaris... il nostro nido! 💙🚗
+        </div>
+
+        <div class="decorative">💙 🚗 💙</div>
+        
+        <p style="margin-top: 30px; color: #666; font-size: 1.1em;">
+            I ricordi più belli sono quelli nel nostro nido! Quasi arrivata! 🎁
+        </p>
+    </div>
+
+    <script>
+        function showHint() {
+            document.getElementById('hint').classList.add('visible');
+            document.querySelector('.hint-button').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
